@@ -1,13 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  color: "#404040";
+  font-family: "Montserrat, sans-serif",
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.nav {
+  width: 100vw;
+  height: 70px;
+}
+
+.nav-links {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  margin: 0;
+  font-family: "Coming Soon", cursive;
+  z-index: 100;
+  padding-left: 10%;
+  padding-right: 10%;
+  transition: .5s;
+}
+
+li {
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  color: white;
+  font-family: Permanent Marker, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav-link:hover {
+  color: #0099ff;
+  transition: 0.4s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  width: 80%;
+  margin: auto;
+}
+
+.left {
+  margin-right: auto;
+}
+
+
+.logo {
+  font-size: 30px;
+}
+
+.background-image-one-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.book-now:hover {
+  background-color: #0099ff;
+  transition: 0.4s;
+  border: 2px solid #0099ff;
+  color: white;
+}
+
+.book-now {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
