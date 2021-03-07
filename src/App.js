@@ -7,19 +7,23 @@ import {
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import Home from "./components/Home";
-import { useEffect } from "react";
+import Location from "./components/Location";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 const App = () => {
+  const [modal, setModal] = useState(false);
   useEffect(() => {
     window.onscroll = () => {
-      const innerHeight = window.innerHeight;
+      const innerHeight = document.getElementById("banner").offsetHeight;
       const scrollTop = document.documentElement.scrollTop;
       let percent = scrollTop / innerHeight;
       if (percent > 1) {
         percent = 1;
       }
-      console.log(percent);
-      document.getElementById("slide-content").style.opacity = 1 - percent;
+      console.log(modal);
+      if (window.innerWidth > 768){
+        document.getElementById("slide-content").style.opacity = 1 - percent;
+      }
       if (percent >= 1) {
         document.getElementById("nav").style.backgroundColor = "black";
       } else {
@@ -36,23 +40,115 @@ const App = () => {
           </span>
 
           <li>
-            <NavLink className="nav-link" to="/">
+            <NavLink
+              className="nav-link mobile-hidden"
+              to="/"
+              activeStyle={{ color: "#0099ff" }}
+              exact
+            >
               About
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to="/gallery">
+            <NavLink
+              activeStyle={{ color: "#0099ff" }}
+              className="nav-link mobile-hidden"
+              to="/gallery"
+            >
               Gallery
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to="/contact">
-              Contact
+            <NavLink
+              activeStyle={{ color: "#0099ff" }}
+              className="nav-link mobile-hidden"
+              to="/location"
+            >
+              Location
             </NavLink>
           </li>
-          <li className="nav-link">BOOK NOW</li>
+          <li>
+            <NavLink
+              activeStyle={{ color: "#0099ff" }}
+              className="nav-link mobile-hidden"
+              to="/contact"
+            >
+              Booking
+            </NavLink>
+          </li>
+        
+
+          <li
+            className="mobile-visible pointer"
+            onClick={() => setModal(!modal)}
+          >
+            <i class="fas fa-2x fa-bars"></i>
+          </li>
         </ul>
       </nav>
+      {modal && (
+        <div
+          className="modal mobile-visible"
+          style={{
+            width: "100vw",
+            height: "100vh",
+            position: "fixed",
+            backgroundColor: "black",
+            transition: ".5s",
+            top: 0,
+          }}
+        >
+          <ul
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
+            <li style={{ marginTop: "1rem" }}>
+              <NavLink
+                className="nav-link"
+                to="/"
+                activeStyle={{ color: "#0099ff" }}
+                exact
+              >
+                About
+              </NavLink>
+            </li>
+            <li style={{ marginTop: "1rem" }}>
+              <NavLink
+                activeStyle={{ color: "#0099ff" }}
+                className="nav-link"
+                to="/gallery"
+              >
+                Gallery
+              </NavLink>
+            </li>
+            <li style={{ marginTop: "1rem" }}>
+              <NavLink
+                activeStyle={{ color: "#0099ff" }}
+                className="nav-link"
+                to="/location"
+              >
+                Location
+              </NavLink>
+            </li>
+            <li style={{ marginTop: "1rem" }}>
+              <NavLink
+                activeStyle={{ color: "#0099ff" }}
+                className="nav-link "
+                to="/contact"
+              >
+                Booking
+              </NavLink>
+            </li>
+        
+          </ul>
+        </div>
+      )}
       <Switch>
         <Route path="/gallery">
           <Gallery />
@@ -60,11 +156,14 @@ const App = () => {
         <Route path="/contact">
           <Contact />
         </Route>
+        <Route path="/location">
+          <Location />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };

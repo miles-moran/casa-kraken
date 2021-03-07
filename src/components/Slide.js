@@ -1,6 +1,7 @@
 const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, footer, button=false }) => {
   return (
     <div
+      id="banner"
       style={{
         height: height,
         width: width,

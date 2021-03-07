@@ -34,6 +34,13 @@ code {
   padding-left: 10%;
   padding-right: 10%;
   transition: .5s;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }
 
 li {
@@ -111,3 +118,20 @@ ul {
   cursor: pointer;
 }
 
+.black {
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-hidden {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-visible{
+    visibility: hidden;
+    display: none;
+  }
+}
