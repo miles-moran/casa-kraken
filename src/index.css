@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;800&display=swap");
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  color: "#404040";
+  color: "#353535";
   font-family: "Montserrat, sans-serif",
 }
 
@@ -110,7 +110,6 @@ ul {
 
 .book-now {
   background-color: white;
-  color: black;
   border: 2px solid white;
 }
 
@@ -118,14 +117,17 @@ ul {
   cursor: pointer;
 }
 
-.black {
-  color: black;
+.white {
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
   .mobile-hidden {
     visibility: hidden;
     display: none;
+  }
+  html {
+    font-size: 11px;
   }
 }
 
@@ -134,4 +136,41 @@ ul {
     visibility: hidden;
     display: none;
   }
+}
+
+.top, .bottom {
+  position: relative;
+  padding: 50px 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+.bottom:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;  
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: skewY(1deg);
+}
+
+.top:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -2;  
+  bottom: 0;
+  transform-origin: left top;
+  transform: skewY(-1deg);
+}
+
+.slanted-div div {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5;
 }

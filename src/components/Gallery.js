@@ -14,8 +14,9 @@ const Gallery = () => {
       header={"Gallery"}
       image={image4}
       height="70vh"
+      
     />
-    <Split pictures={pictures}/>
+    <Split pictures={pictures} />
     </>
   );
 };

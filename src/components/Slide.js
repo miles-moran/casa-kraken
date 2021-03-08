@@ -1,4 +1,4 @@
-const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, footer, button=false }) => {
+const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, footer, button=false, scale = 1}) => {
   return (
     <div
       id="banner"
@@ -33,7 +33,7 @@ const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, fo
             <div
               style={{
                 textAlign: "center",
-                fontSize: "75px",
+                fontSize: 5 * scale + 'rem',
                 fontFamily: "Montserrat, sans-serif",
                 fontWeight: "800",
                 color: "white",
@@ -44,9 +44,9 @@ const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, fo
             <div
               style={{
                 textAlign: "center",
-                fontSize: "35px",
+                fontSize: 3.5 * scale + 'rem',
                 fontFamily: "Montserrat, sans-serif",
-                fontWeight: "400",
+                fontWeight: "200",
                 color: "white",
                 marginTop: "2rem",
               }}
@@ -62,10 +62,11 @@ const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, fo
                   borderRadius: "25px",
                   fontFamily: "Montserrat, sans-serif",
                   padding: "9px 23px",
-                  fontSize: "20px",
+                  fontSize: '1.5rem',
+                  fontWeight: '300'
                 }}
               >
-                Book Now
+                BOOK NOW
               </a>
             </div>}
           </div>

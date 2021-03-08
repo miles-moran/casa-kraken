@@ -9,6 +9,7 @@ const Location = () => {
     <>
       <Slide header={"Location"} image={image4} height="70vh" />
       <Frame
+      slant={'top'}
         header={"What's Nearby?"}
         subheader={
           <div

@@ -5,6 +5,7 @@ import image2 from "../assets/sample1.jpg";
 import image3 from "../assets/sample2.jpg";
 import image4 from "../assets/sample4.jpg";
 import Split from "./Split";
+import Slanted from "./Slanted";
 const Home = () => {
   const fac = [
     "Internet",
@@ -50,7 +51,8 @@ const Home = () => {
         image={image1}
         button={true}
       />
-      <Frame
+      <Slanted
+        slant={'bottom'}
         header={"360 – PURE ENJOYMENT IN A WARM CITY CALLED BARCELONA…"}
         subheader={
           " 360 Hostel Barcelona is located only a few blocks away from the main Plaza Cataluña. We’re right next to the cosy Borne neighborhood, within walking distance of all the main attractions, bars and shops, from the luxurious Paseo de Gracia Avenue to the historical Gothic and the vibrant Raval. Our daily activities agenda will make it easy to meet fellow travelers."
@@ -64,8 +66,9 @@ const Home = () => {
         height={"50%"}
         image={image2}
         button={true}
+        scale={.6}
       />
-      <Split pictures={pictures} />
+      <Split backgroundColor='#FFE4E1' slant={'top bottom'} pictures={pictures} />
       <Slide
         header={"THE EXPERIENCE"}
         subheader={
@@ -73,8 +76,10 @@ const Home = () => {
         }
         image={image3}
         height={"50%"}
+        scale={.6}
       />
-      <Frame
+      <Slanted
+      slant={'top bottom'}
         header={"Facilities"}
         subheader={
           <div
@@ -87,7 +92,7 @@ const Home = () => {
             }}
           >
             {fac.map((f) => (
-              <div style={{ margin: "1rem", width: "40%" }}>{f}</div>
+              <div style={{ margin: ".5rem", width: "40%" }}>{f}</div>
             ))}
           </div>
         }
@@ -99,6 +104,7 @@ const Home = () => {
         }
         image={image4}
         height={"50%"}
+        scale={.6}
       />
     </>
   );

@@ -20,7 +20,6 @@ const App = () => {
       if (percent > 1) {
         percent = 1;
       }
-      console.log(modal);
       if (window.innerWidth > 768){
         document.getElementById("slide-content").style.opacity = 1 - percent;
       }
@@ -88,6 +87,7 @@ const App = () => {
       </nav>
       {modal && (
         <div
+          onClick={() => setModal(false)}
           className="modal mobile-visible"
           style={{
             width: "100vw",
@@ -95,6 +95,7 @@ const App = () => {
             position: "fixed",
             backgroundColor: "black",
             transition: ".5s",
+            zIndex: 50,
             top: 0,
           }}
         >

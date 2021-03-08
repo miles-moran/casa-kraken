@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ backgroundColor = "lightgrey" }) => {
+export default ({ backgroundColor = "rgb(153, 190, 250)" }) => {
   return (
     <div
       style={{
@@ -17,17 +17,17 @@ export default ({ backgroundColor = "lightgrey" }) => {
           style={{ margin: "1rem" }}
           href="https://www.instagram.com/krakenhostel/"
         >
-          <i className="fab black fa-2x fa-instagram"></i>
+          <i className="fab white fa-2x fa-instagram"></i>
         </a>
         <a
           target="_blank"
           style={{ margin: "1rem" }}
           href="https://www.facebook.com/krakenhostel"
         >
-          <i className="fab black fa-2x fa-facebook-square"></i>
+          <i className="fab white fa-2x fa-facebook-square"></i>
         </a>
         <a style={{ margin: "1rem" }} href="mailto:casakrakenhostel@gmail.com">
-          <i className="fas black fa-2x fa-envelope"></i>
+          <i className="fas white fa-2x fa-envelope"></i>
         </a>
       </div>
     </div>
