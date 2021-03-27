@@ -29,57 +29,72 @@ const Home = () => {
     "Luggage Storage",
     "Late check-out",
   ];
+  const act = ["Board Games", "Barbeques", "Painting Classes", "Sightseeing", "Spanish Classes", "Hikes"];
+  const trips = ["Los Colomitos Beach", "El Mirador", "Playa Gemelas", "Playa Palmares", "Bar Aloha", "Paco's Ranch"];
   const pictures = [
     {
       picture: image2,
-      caption: "Two Bed",
+      caption: {
+        primary: "Mixed 8 Dorm",
+        secondary: "$200",
+      },
     },
     {
       picture: image3,
-      caption: "Four Bed",
+      caption: {
+        primary: "Mixed 10 Dorm",
+        secondary: "$200",
+      },
     },
     {
       picture: image3,
-      caption: "Six Bed",
+      caption: {
+        primary: "Female Dorm",
+        secondary: "$200",
+      },
     },
   ];
   return (
     <>
       <Slide
-        header={"COLLECT MOMENTS NOT THINGS"}
-        subheader={"Welcome to Hostel Kraken!"}
+        header={<>EXPERIENCE PUERTO VALLARTA</>}
+        subheader={""}
         image={image1}
         button={true}
       />
       <Slanted
-        slant={'bottom'}
-        header={"360 – PURE ENJOYMENT IN A WARM CITY CALLED BARCELONA…"}
+        slant={"bottom"}
+        header={"RELEASE THE KRAKEN!"}
         subheader={
-          " 360 Hostel Barcelona is located only a few blocks away from the main Plaza Cataluña. We’re right next to the cosy Borne neighborhood, within walking distance of all the main attractions, bars and shops, from the luxurious Paseo de Gracia Avenue to the historical Gothic and the vibrant Raval. Our daily activities agenda will make it easy to meet fellow travelers."
+          "Formerly called Oasis Downtown Hostel, this is one of the few youth hostels in downtown Puerto Vallarta. Welcome to your temporal refuge in Mexico. Our location is one of the best: we are in between the main church (Parish of Our Lady of Guadalupe) and the main square (Plaza de Armas which is adjacent to the city hall). We are located in one of the most privileged weather with almost 300 suny day per year. 26° Celsius pretty much all year long and in a bay where you will enjoy every day an unforgettable sunset. Feel safe while you experience the wonders of this magical beach paradise called Puerto Vallarta. "
         }
       />
       <Slide
         header={"ROOMS"}
         subheader={
-          "We have five different room types. You can choose between our two-bed (with private terrace), four-bed, six-bed, eight-bed or ten-bed dorm. Bed sheets and linen are provided and all rooms come with big security lockers, reading lights and air-conditioning units."
+          "We have three room types available: Our basic mixed dorm for eight, our basic mixed dorm for ten, and a standard female dorm for ten."
         }
         height={"50%"}
         image={image2}
         button={true}
-        scale={.6}
+        scale={0.6}
       />
-      <Split backgroundColor='#FFE4E1' slant={'top bottom'} pictures={pictures} />
+      <Split
+        backgroundColor="#FFE4E1"
+        slant={"top bottom"}
+        pictures={pictures}
+      />
       <Slide
         header={"THE EXPERIENCE"}
         subheader={
-          "We provide a fully equipped kitchen for you to be able to save some money and make your favourite dishes. In the big lounge area with comfy sofas you can meet travelers from all around the world, share experiences and make new friends. Our hostel also offers plenty of computers with 24 hours free internet access and Wi-Fi all over the hostel for you to keep in touch, or plan your next trips."
+          "We provide a fully equipped kitchen for you to be able to save some money and make your favourite dishes, though breakfast is included free. We have multiple lounge areas with free wifi, a rooftop bar, and hot showers."
         }
         image={image3}
         height={"50%"}
-        scale={.6}
+        scale={0.6}
       />
       <Slanted
-      slant={'top bottom'}
+        slant={"top bottom"}
         header={"Facilities"}
         subheader={
           <div
@@ -92,7 +107,7 @@ const Home = () => {
             }}
           >
             {fac.map((f) => (
-              <div style={{ margin: ".5rem", width: "40%" }}>{f}</div>
+             <div className={"list-item"} style={{ margin: ".5rem" }}>{f}</div>
             ))}
           </div>
         }
@@ -104,7 +119,44 @@ const Home = () => {
         }
         image={image4}
         height={"50%"}
-        scale={.6}
+        scale={0.6}
+      />
+      <Slanted
+        header={"Activities"}
+        slant={"top bottom"}
+        subheader={
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {act.map((a) => (
+               <div className={"list-item"} style={{ margin: ".5rem" }}>{a}</div>
+            ))}
+          </div>
+        }
+      />
+      <Frame
+        header={"Trips to:"}
+        subheader={
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {trips.map((a) => (
+              <div className={"list-item"} style={{ margin: ".5rem" }}>{a}</div>
+            ))}
+          </div>
+        }
       />
     </>
   );

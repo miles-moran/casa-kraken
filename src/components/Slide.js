@@ -46,27 +46,26 @@ const Slide = ({ height = "100vh", width = "100vw", image, header, subheader, fo
                 textAlign: "center",
                 fontSize: 3.5 * scale + 'rem',
                 fontFamily: "Montserrat, sans-serif",
-                fontWeight: "200",
+                fontWeight: "300",
                 color: "white",
                 marginTop: "2rem",
               }}
             >
               {subheader}
             </div>
-            {button && <div style={{ textAlign: "center", marginTop: "4rem" }}>
+            {button && <div className='grow' style={{ textAlign: "center", marginTop: "4rem" }}>
               <a
                 className="book-now pointer"
                 target="_blank"
                 href="https://www.hostelworld.com/hosteldetails.php/Casa-Kraken-Hostel/Puerto-Vallarta/286111"
                 style={{
-                  borderRadius: "25px",
                   fontFamily: "Montserrat, sans-serif",
-                  padding: "9px 23px",
-                  fontSize: '1.5rem',
+                  padding: "9px 20px",
+                  fontSize: '2rem',
                   fontWeight: '300'
                 }}
               >
-                BOOK NOW
+                BOOK IT
               </a>
             </div>}
           </div>

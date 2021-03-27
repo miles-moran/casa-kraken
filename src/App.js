@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import Location from "./components/Location";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import Scroll from "./components/Scroll";
 const App = () => {
   const [modal, setModal] = useState(false);
   useEffect(() => {
@@ -30,8 +31,11 @@ const App = () => {
       }
     };
   }, []);
+
+  
   return (
     <Router>
+      <Scroll>
       <nav>
         <ul className="nav-links" id="nav">
           <span className="left">
@@ -48,15 +52,7 @@ const App = () => {
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              activeStyle={{ color: "#0099ff" }}
-              className="nav-link mobile-hidden"
-              to="/gallery"
-            >
-              Gallery
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               activeStyle={{ color: "#0099ff" }}
@@ -64,6 +60,15 @@ const App = () => {
               to="/location"
             >
               Location
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              activeStyle={{ color: "#0099ff" }}
+              className="nav-link mobile-hidden"
+              to="/gallery"
+            >
+              Gallery
             </NavLink>
           </li>
           <li>
@@ -81,7 +86,7 @@ const App = () => {
             className="mobile-visible pointer"
             onClick={() => setModal(!modal)}
           >
-            <i class="fas fa-2x fa-bars"></i>
+            <i className="fas hamburger fa-2x fa-bars"></i>
           </li>
         </ul>
       </nav>
@@ -107,6 +112,8 @@ const App = () => {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
+              margin: 0,
+              padding: 0
             }}
           >
             <li style={{ marginTop: "1rem" }}>
@@ -117,6 +124,16 @@ const App = () => {
                 exact
               >
                 About
+              </NavLink>
+            </li>
+
+            <li style={{ marginTop: "1rem" }}>
+              <NavLink
+                activeStyle={{ color: "#0099ff" }}
+                className="nav-link"
+                to="/location"
+              >
+                Location
               </NavLink>
             </li>
             <li style={{ marginTop: "1rem" }}>
@@ -131,22 +148,12 @@ const App = () => {
             <li style={{ marginTop: "1rem" }}>
               <NavLink
                 activeStyle={{ color: "#0099ff" }}
-                className="nav-link"
-                to="/location"
-              >
-                Location
-              </NavLink>
-            </li>
-            <li style={{ marginTop: "1rem" }}>
-              <NavLink
-                activeStyle={{ color: "#0099ff" }}
                 className="nav-link "
                 to="/contact"
               >
                 Booking
               </NavLink>
             </li>
-        
           </ul>
         </div>
       )}
@@ -165,6 +172,7 @@ const App = () => {
         </Route>
       </Switch>
       <Footer />
+            </Scroll>
     </Router>
   );
 };
